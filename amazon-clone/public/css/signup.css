@@ -1,0 +1,80 @@
+body{
+    background-color: honeydew;
+}
+
+.form{
+    font-size: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 3px solid grey;
+    border-radius: 5px;
+    margin: 2rem auto;
+    padding: 2rem 5rem;
+    width: 50%;
+    background-color: lightgrey;
+}
+span{
+    font-size: 65%;
+}
+.form form h3{
+    align-items: center;
+    text-align: center;
+}
+.form form{
+    display: flex;
+    flex-direction: column;
+    
+}
+.form form input{
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    padding: 4px;
+}
+.form form img{
+    width: 150px;
+    height: 150px;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 100px;
+}
+.form form input:hover{
+    border: 2px solid orange;
+}
+.form form a{
+    font-size: 1.5rem;
+}
+.form form button{
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: .3rem;
+    border-radius: 5px;
+    background-color: orange;
+    border: 2px solid black;
+}
+.form form button:hover{
+    border: 2px solid ghostwhite;
+}
+.alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+.alert-dismissible {
+    padding-right: 4rem;
+}
+.alert {
+    position: relative;
+    padding: .75rem .75rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.fade {
+    transition: opacity .15s linear;
+}
+.close{
+   float: right;
+   margin-top: 0;
+}
+.close span{
+    font-size: 2rem;
+}

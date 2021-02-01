@@ -1,0 +1,95 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jQuery.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/additem.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <title>Amazona</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="brand">
+                <button onclick="openmenu()">&#9776;</button>
+                <a href="/">Amazona</a>
+                <a href="/additem">Add</a>
+            </div>
+            <div class="header-links"><a href="/cart">Cart <span style="border: 1px solid red;border-radius: 20px;background-color: orangered;"><%=cart.totalquantity%></span></a>
+                <a href="/users/signin">
+                    <%if(typeof user!='undefined'){%>
+                        <%=user.name%>
+                        <%}else{%>
+                            SignIn
+                       <% }%>
+                </a></div>
+        </header>
+        <aside class="sidebar">
+            <h3>Shopping categories</h3>
+            <button onclick="closemenu()" class="sidebar-close-button">X</button>
+            <li><a href="pants.html">Pants</a></li>
+            <li><a href="shirts.html">Shirts</a></li>
+        </aside>
+
+
+        <main class="main">
+            <h1>Checking My Cart  <hr></h1>
+          
+            <%if(cart.total!=0){%>
+                <table class="pure-table">
+                    <thead>
+                        <tr>
+                            <td>Image</td>
+                            <td>Title</td>
+                            <td>Price</td>
+                            <td>Qty</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%cart.items.forEach(function(cart){%>
+                        <tr class="pure-table-odd">
+                            <td><img src="<%=cart.image%>" alt="image" width="100px"></td>
+                            <td><%=cart.title%></td>
+                            <td><%=cart.price*cart.qty%></td>
+                            <td><%=cart.qty%></td>
+                        </tr>
+                        <%})%>
+                      
+                    </tbody>
+                </table>
+
+                <table class="pure-table">
+                    <tr>
+                        <td>Total</td>
+                        <td><%=cart.total%></td>
+                        <td>
+                            <form action="https://sandbox.paypal.com/cgi-bin/webscr" method="POST">
+                            <input type="hidden" name="cmd" value="xclick">
+                            <input type="hidden" name="business"value="#">
+                            <input type="hidden" name="item_name" value="amazona">
+                            <input type="hidden" name='item_number' value="1">
+                            <input type="hidden" name="currency_code" value="USD">
+                            <input type="hidden" name="amount" value="<%=cart.total%>">
+                            <input type="hidden" name="no_shipping" value="1">
+                            <input type="hidden" name="rm" value="2">
+                            <input type="hidden" name="return" value="http://localhost:4000">
+                            <input type="hidden" name="cancel_return" value="http://localhost:4000/users/signin">
+                            <input type="image" src="https://www.paypalobjects.com/webstatic/en_US/btn/btn_buynow_107x26.png" name="submit" alt="Buy now">
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+                
+                <% }else{%>
+                    <h2>Shopping Cart is empty</h2>
+                <%}%>
+        </main>
+        <footer class="footer">All Right Reserved</footer>
+    </div>
+    <script src="/css.js"></script>
+</body>
+
+</html>

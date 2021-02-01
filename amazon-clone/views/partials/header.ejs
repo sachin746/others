@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Amazona</title>
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="brand">
+                <button onclick="openmenu()">&#9776;</button>
+                <a href="/">Amazona</a>
+                <a href="/additem" style="font:1.6rem helvetica;align-items: center;">Add</a>
+            </div>
+            <div class="header-links"><a href="/cart">Cart<span style="border: 1px solid red;border-radius: 20px;background-color: orangered;"><%=totalquantity%></span></a>
+                <a href="/users/signin">
+                    <%if(typeof user!='undefined'){%>
+                    <%=user.name%>
+                    <%}else{%>
+                        SignIn
+                   <% }%>
+
+                </a></div>
+        </header>
+        <aside class="sidebar">
+            <h3>Shopping categories</h3>
+            <button onclick="closemenu()" class="sidebar-close-button">X</button>
+            <li><a href="pants.html">Pants</a></li>
+            <li><a href="shirts.html">Shirts</a></li>
+        </aside>

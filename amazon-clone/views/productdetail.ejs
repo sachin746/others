@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/jQuery.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/productdetail.css">
+    <title>Amazona</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="brand">
+                <button onclick="openmenu()">&#9776;</button>
+                <a href="/">Amazona</a>
+                <a href="/additem">Add</a>
+            </div>
+            <div class="header-links"><a href="/cart">Cart<span style="border: 1px solid red;border-radius: 20px;background-color: orangered;"><%=totalquantity%></span></a>
+                <a href="/users/signin">
+                    <%if(typeof user!='undefined'){%>
+                        <%=user.name%>
+                        <%}else{%>
+                            SignIn
+                       <% }%>
+                </a></div>
+        </header>
+        <aside class="sidebar">
+            <h3>Shopping categories</h3>
+            <button onclick="closemenu()" class="sidebar-close-button">X</button>
+            <li><a href="pants.html">Pants</a></li>
+            <li><a href="shirts.html">Shirts</a></li>
+        </aside>
+
+
+        <main class="main">
+            <div class="image">
+                <img src="/<%=prdt.pimage%>" alt="image">
+            </div>
+            <div class="details">
+                <h3><%=prdt.pname%></h3>
+                <h5><%=prdt.pbrand%></h5>
+                <h4>Rs <%=prdt.pprice%></h4>
+                <h4><%=prdt.pdescription%></h4>
+                <div>
+                    <form action="/cart/<%=prdt._id%>" method="POST">
+                        <button >Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+
+        </main>
+        <footer class="footer">All Right Reserved</footer>
+    </div>
+    <script src="/css.js"></script>
+</body>
+
+</html>

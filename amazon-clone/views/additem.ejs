@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="jQuery.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/additem.css">
+    <title>Amazona</title>
+</head>
+
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="brand">
+                <button onclick="openmenu()">&#9776;</button>
+                <a href="/">Amazona</a>
+                <a href="/additem">Add</a>
+            </div>
+            <div class="header-links"><a href="/cart">Cart</a><a href="/users/signin">
+                <%if(typeof user!='undefined'){%>
+                    <%=user.name%>
+                    <%}else{%>
+                        SignIn
+                   <% }%>
+            </a></div>
+        </header>
+        <aside class="sidebar">
+            <h3>Shopping categories</h3>
+            <button onclick="closemenu()" class="sidebar-close-button">X</button>
+            <li><a href="pants.html">Pants</a></li>
+            <li><a href="shirts.html">Shirts</a></li>
+        </aside>
+
+
+        <main class="main">
+            <h1>Adding a new Product in the inventry</h1>
+            <div class="main-div">
+                <h1>Add A Product</h1>
+                    <form action="/additem" method="POST" enctype="multipart/form-data">
+                        <div class="items">
+                        <div> 
+                            <label for="image">Upload Image</label> 
+                            <input type="file" onchange="readURL(this)" id="image" name="pimage" value="" required> 
+                        </div> 
+                        <div><label> Product Name:</label><input type="text" id="1" onkeyup="yo1()" name="pname" required></div>
+                        <div><label>Product brand</label> <input type="string" id="2" onkeyup="yo2()" name="pbrand" required></div>
+                        <div><label> Product price</label> <input type="string" id="3" onkeyup="yo3()" name="pprice" required></div>
+                        <div><label> Product Description</label><textarea name="pdescription" cols="30" rows="10" required></textarea></div>
+                        <div><input type="submit" value="submit" name="submit"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="display-div">
+                    <ul class="products-yo">
+                        <li>
+                            <div class="prod juct">
+                                
+                                    <img class="product-image" id="blah" src="#" alt="product">
+                                <div class="product-details">
+                                    <div  class="product-name"><a id="11" href="product.html"></a></div>
+                                <div id="22" class="product-brand"></div>
+                                <div id="33" class="product-price"></div>
+                                <div class="product-rating">4.5 stars(10 Reviews)</div>
+                                </div>
+                               
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+        </main>
+        <footer class="footer">All Right Reserved</footer>
+    </div>
+    <script src="/css.js"></script>
+</body>
+
+</html>

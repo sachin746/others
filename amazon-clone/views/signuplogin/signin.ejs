@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/signin.css">
+    <title>Amazona</title>
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="brand">
+                <button onclick="openmenu()">&#9776;</button>
+                <a href="/">Amazona</a>
+                <a href="/additem" style="font:1.6rem helvetica;align-items: center;">Add</a>
+            </div>
+            <div class="header-links"><a href="/cart">Cart</a><a href="/users/signin">SignIn</a></div>
+        </header>
+        <aside class="sidebar">
+            <h3>Shopping categories</h3>
+            <button onclick="closemenu()" class="sidebar-close-button">X</button>
+            <li><a href="pants.html">Pants</a></li>
+            <li><a href="shirts.html">Shirts</a></li>
+        </aside>
+        
+        
+        <main class="main">
+            <div class="form">
+                <form action="/users/login" method="POST">
+                    <img src="/images/user.png" alt="userimage">
+                    <h3>Sign In</h3>
+                    <%- include("../partials/messages")%>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Sign In</button>
+                    <a href="">forgot password?</a><a href="/users/signup">Sign up</a>
+                    </form>
+            </div>
+        </main>
+    
+
+
+
+
+
+
+        <footer class="footer">All Right Reserved</footer>
+    </div>
+    <script src="/jQuery.js"> </script>
+    <script src="/css.js"></script>
+</body>
+
+</html>

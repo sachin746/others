@@ -1,0 +1,27 @@
+<%- include ("partials/header")%>
+
+
+<main class="main">
+    <ul class="products">
+        <% prdt.forEach(function(prdt) { %>
+        <li>
+            <div class="product">
+
+                <img class="product-image" src=<%=prdt.pimage%> alt="product">
+                <div class="product-details">
+                    <div class="product-name"><a href="/product/<%=prdt._id%>"><%=prdt.pname%></a></div>
+                    <div class="product-brand"><%=prdt.pbrand%></div>
+                    <div class="product-price">Rs <%=prdt.pprice%></div>
+                    <div class="product-rating">4.5 stars(10 Reviews)</div>
+                </div>
+
+
+            </div>
+        </li>
+        <% })%>
+    </ul>
+</main>
+
+
+
+<%- include ("partials/footer")%>

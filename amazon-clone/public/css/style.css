@@ -1,0 +1,145 @@
+html{
+  font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  a{
+    text-decoration: none;
+    outline:none;
+  }
+  a:hover{
+    color: #ff8000;
+  }
+.header a:hover{
+    border: 2px solid white;
+    border-radius: .5rem;
+}
+  body{
+    font:1.6rem Helvetica;
+    height:100vh;
+    margin: 0;
+  }
+  
+  ul{
+    list-style-type: none;
+  }
+  .grid-container{
+    display: grid;
+    grid-template-areas: "header""main""footer";
+    grid-template-columns: 1fr;
+    grid-template-rows:5rem 1fr 5rem;
+    min-width: 300px;
+  
+  }
+  
+  .header{
+    grid-area: header;
+    background-color: #203040;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+    position: fixed;
+    width: 100%;
+  }
+  .brand a{
+    font-size: 2.5rem;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 1rem;
+    padding: 7px;
+  }
+  
+  .header-links a{
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1rem;
+    padding: 7px;
+  }
+  .header-links :hover{
+    color: orange;
+  }
+  .main{
+    grid-area: main;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .footer{
+    grid-area: footer;
+    background-color: #203040;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* home screen */
+  
+  .products{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .product{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    height: 50%;
+    margin: 2rem;
+    
+  }
+  .product-name{
+    font-size: 1.5rem;
+ }
+  .product-brand{
+    font-size: 1.2rem;
+    color: #808080;
+    margin-bottom: .5rem;
+  }
+  .product-price{
+    font-size: 2rem;
+  }
+  .product-image{
+    width: 15rem;
+    height: 20rem;
+    margin: 1rem auto;
+  }
+  .product-details{
+      padding: 1rem;
+      flex-wrap: nowraps;
+  }
+  /* sidebar */
+  .brand button{
+    font-size: 3rem;
+    padding: .5rem;
+    background: none;
+    border: none;
+    color: #fff;
+  }
+  .sidebar{
+    position: fixed;
+    transform: translateX(-30rem);
+    width: 30rem;
+    background-color: #f0f0f0;
+    height: 100%;
+  }
+  .sidebar.open{
+    transform: translateX(0rem);
+    transition: .5s;
+  }
+  .sidebar-close-button{
+    border-radius: 50%;
+    border: .1rem #000 solid;
+    width: 3rem;
+    width: 3rem;
+    padding: .5rem;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: .5rem;
+    top: 1.5rem;
+  }

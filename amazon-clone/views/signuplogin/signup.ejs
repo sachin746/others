@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Amazona</title>
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">
+            <div class="brand">
+                <button onclick="openmenu()">&#9776;</button>
+                <a href="/">Amazona</a>
+                <a href="/additem" style="font:1.6rem helvetica;align-items: center;">Add</a>
+            </div>
+            <div class="header-links"><a href="/cart">Cart</a><a href="/users/signin">SignIn</a></div>
+        </header>
+        <aside class="sidebar">
+            <h3>Shopping categories</h3>
+            <button onclick="closemenu()" class="sidebar-close-button">X</button>
+            <li><a href="pants.html">Pants</a></li>
+            <li><a href="shirts.html">Shirts</a></li>
+        </aside>
+    
+        <main class="main">
+            <div class="form">
+                <form action="/users/signup" method="POST">
+                    <img src="/images/user.png" alt="userimage">
+                    <h3>Create New Account</h3>
+                    <%- include("../partials/messages")%>
+                    <label for="name">Name</label>
+                    <input type="name" id="name" name="name" value="<%= typeof name != 'undefined' ? name:''%>" placeholder="Enter Name">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" value="<%= typeof email != 'undefined' ? email:''%>" placeholder="Enter Email Id">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password"  value="<%= typeof password != 'undefined' ? password:''%>" placeholder="Create Password">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" id="password2" name="password2"  value="<%= typeof password2 != 'undefined' ? password2:''%>" placeholder="Create Password">
+                    <button type="submit">Sign Up</button>
+                    <span>Have an Account?<a href="/users/signin">Login</a></span>
+                    </form>
+        </main>
+
+
+
+
+
+
+        <footer class="footer">All Right Reserved</footer>
+    </div>
+    <script src="/css.js"></script>
+    <script src="/jQuery.js"> </script>
+</body>
+
+</html>
